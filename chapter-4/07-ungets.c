@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 /* 
-
 4-7 Write ungets that pushes an entire string back to the input.
 */
 
