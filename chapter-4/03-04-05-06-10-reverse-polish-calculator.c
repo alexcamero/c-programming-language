@@ -36,6 +36,26 @@ double duplicate_top_stack(void);
 void swap_top_two_stack(void);
 void get_line(void);
 
+int main() {
+    int i;
+    for (i = 0; i < 26; i++) {
+        var_states[i] = 0;
+    }
+    for (i = 0; i < MAXLINE; i++) {
+        stack[i] = 0.0;
+    }
+    i = 0;
+    while (reading) {
+        get_line();
+        if (!reading) {
+            break;
+        }
+        ans = calculator();
+        printf("**********\n%f\n**********\n", ans);
+    }
+    return 0;
+}
+
 void get_line(void) {
     char c;
     int i;
@@ -56,26 +76,6 @@ void get_line(void) {
     if (c == EOF) {
         reading = 0;
     }
-}
-
-int main() {
-    int i;
-    for (i = 0; i < 26; i++) {
-        var_states[i] = 0;
-    }
-    for (i = 0; i < MAXLINE; i++) {
-        stack[i] = 0.0;
-    }
-    i = 0;
-    while (reading) {
-        get_line();
-        if (!reading) {
-            break;
-        }
-        ans = calculator();
-        printf("**********\n%f\n**********\n", ans);
-    }
-    return 0;
 }
 
 double calculator(void) {
